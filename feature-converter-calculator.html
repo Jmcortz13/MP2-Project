@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="features.css">
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        // Call the API and get the exchange rate
+        function getExchangeRate(fromCurrency, toCurrency) {
+          var apiKey = 'YOUR_API_KEY';
+          var apiUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=' + fromCurrency + '&vs_currencies=' + toCurrency;
+          
+          $.ajax({
+            url: apiUrl,
+            method: 'GET',
+            dataType: 'json',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'X-CoinAPI-Key': apiKey
+            },
+            success: function(data) {
+              var rate = data[fromCurrency][toCurrency];
+              $('#exchangeRate').val(rate);
+            },
+            error: function(xhr, status, error) {
+              console.log(xhr.responseText);
+            }
+          });
+        }
+        
+        // Perform the conversion calculation
+        function calculateConversion() {
+          var fromCurrency = $('#fromCurrency').val();
+          var toCurrency = $('#toCurrency').val();
+          var amount = $('#amount').val();
+          var exchangeRate = $('#exchangeRate').val();
+          var result = amount * exchangeRate;
+          $('#result').val(result);
+        }
+        
+        // Set the default currencies
+        $('#fromCurrency').val('bitcoin');
+        $('#toCurrency').val('usd');
+        
+        // Get the exchange rate and perform the calculation
+        getExchangeRate($('#fromCurrency').val(), $('#toCurrency').val());
+        $('#amount, #fromCurrency, #toCurrency').on('input', function() {
+          getExchangeRate($('#fromCurrency').val(), $('#toCurrency').val());
+          calculateConversion();
+        });
+      });
+    </script>
+
+      <div class="container shadow-lg p-2 mb-3 bg-body-tertiary rounded">
+          <div class="container mb-5 justify-content-center"> 
+        <form>
+            <h1 class="text-center my-5 mx-auto text-primary-emphasis">Cryptocurrency Converter Calculator</h1> 
+            <div class="col-6"> 
+          <input class="form-control my-2" type="number" id="amount" placeholder="Enter the Amount">
+          <select class="form-control my-2" id="fromCurrency">
+            <option value="bitcoin">Bitcoin</option>
+            <option value="ethereum">Ethereum</option>
+            <option value="litecoin">Litecoin</option>
+          </select>
+          <select class="form-control my-2" id="toCurrency">
+            <option value="usd">USD</option>
+            <option value="eur">EUR</option>
+            <option value="gbp">GBP</option>
+          </select>
+          <input class="form-control my-2" type="number" id="exchangeRate" disabled>
+          <input class="form-control my-2" type="number" id="result" disabled>
+        </form>
+      </div>
+    </div>
+  </div>
+   
+  <!--Latest BTC to USD Rates-->
+  <div class="container text-justify-center">
+        <div>
+            <div>
+                <h2 class="fw-bolder text-secondary">Latest BTC to USD Rates</h2>
+                <p>It's a match made in heaven: the world's biggest cryptocurrency and the world's largest fiat currency. BTC/USD is a major trading pair — and right here, you'll find up-to-the-minute information on the latest conversion rates.</p>
+                <p>Ever since Bitcoin launched in 2009, its value has often been conveyed in U.S. dollars. Comparing prices across exchanges helps guarantee you'll get the best deal, as some platforms offer a better deal than others.</p>
+                <p>Cryptocurrency adoption in the U.S. continues to rise — and in 2019, the number of people who owned digital assets doubled. With a population of 328.2 million, America is a massive and largely untapped market.</p>
+                <p></p>
+                <h3 class="fw-bolder text-secondary">BTC vs USD Now</h3>
+                <p>There's a constant buzz about how Bitcoin is performing against the U.S. dollar. Traders anxiously watch the pair's every move — and fluctuations regularly hit the headlines. CoinMarketCap is the place people go to to find accurate BTC/USD rates, and we're here 24/7.</p>
+                <p>Over the years, we've gained a reputation for continually monitoring thousands of markets. News websites and exchanges don't always have the latest conversions, but our easy-to-use tool is automatically updated on a regular basis.</p>
+                <p>Don't forget that we have plenty of other metrics that can show you whether the BTC market is in a healthy state. You can easily assess the market cap of the world's biggest cryptocurrency — and at the top of every page we deliver an insight into Bitcoin's dominance.</p>
+                <p>This tool is fully customizable, meaning that you can type in any dollar amount and get an immediate conversion into BTC, and vice versa. Using the dropdown menu, you can also explore rates for other crypto and fiat pairings.</p>
+                <p>Bitcoin is renowned for its volatility — and in the past, it's gained and lost hundreds of dollars in a matter of minutes. Thanks to our straightforward tool, you'll never be out of the loop.</p>
+                <p></p>
+                <h3 class="fw-bolder text-secondary">Do You Need To Convert BTC to USD Today?</h3>
+                <p>Are you hoping to sell some crypto today — or are you interested in buying some Bitcoin for the first time?</p>
+                <p>Cryptocurrencies have gained a reputation for being complicated, but the industry has made great progress in demystifying digital assets once and for all.</p>
+                <p>Many exchanges offer clean user interfaces that can be compared to those used by top e-commerce websites and banks.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Script-->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+    </script> 
+</body>
+</html>
