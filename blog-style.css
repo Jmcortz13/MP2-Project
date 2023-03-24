@@ -1,0 +1,74 @@
+.logo img{
+    width: 60px;
+    cursor: pointer;
+    margin-left: 100px;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #f5f6f7;
+    font-family: Tahoma;
+    font-size: 16px;
+  }
+  nav {
+   
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .menuIcon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: block;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .menuIcon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.25s ease-out;
+  }
+  nav .mainMenu li a:hover {
+    background: #ff960b;
+    border-radius: 15px;
+    color: black;
+    padding-left: 10px;
+    font: optional;
+  }
+  nav .mainMenu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+    nav .mainMenu li a {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    transition: 0.2s ease;
+    margin-right: 50px;
+  }
+  .light {
+    filter: invert(1);
+  }
+  
