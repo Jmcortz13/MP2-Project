@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
       href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -16,8 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
+      <link rel="stylesheet" href="./style.css" />
     <title>Markets</title>
     <style>
       img {
@@ -26,23 +26,69 @@
         width: 32px;
       }
 
-      body {
+      * {
         font-family: "Roboto", sans-serif;
+        color: #555;
       }
     </style>
   </head>
 
   <body>
-    <div class="container-fluid mx-3 px-4">
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-md me-auto" aria-label="Fourth navbar example">
+      <div class="container-fluid">
+        <div class="logo"><img src="index-css-js/images/logo.png" class="logo"></div>
+        <button class="navbar-toggler menuIcon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon light"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse navbar-dark" id="navbarsExample04">
+          <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 mainMenu">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="markets.html">Market</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feature.html">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="badge rounded-pill text-bg-warning py-3 px-3">Log Out</span></a>
+            </li>
+            </ul>
+         </div>
+      </div>
+    </nav>
+    <!-- <nav>
+      <div class="logo"><img src="index-css-js/images/logo.png" class="logo"></div>
+      <div class="menuIcon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="mainMenu">
+        <li><a href="#" class="home">Home</a></li>
+        <li><a href="markets.html">Market</a></li>
+        <li><a href="feature.html">Features</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#"><span class="badge rounded-pill text-bg-warning py-3 px-3">Log Out</span></a></li>
+      </ul>
+    </nav> -->
+    <div class="container-fluid justify-content-center mx-3 px-4">
       <div class="row">
-        <div class="col-lg-12">
-          <h1>Market Overview</h1>
+        <div class="col-md-12 justify-content-center">
+          <h1 class="text-center fw-bolder market-h1">Market Overview</h1>
         </div>
-        <div class="col-lg-3 col-12">
+        <div class="col-md-3 col-12 topCoins">
           <h6>Top 5 Coins</h6>
-          <table>
+          <table class="col-md-12 table-responsive">
             <tr class="row">
-              <td class="col-lg-4 col-4 text-center">
+              <td class="col-md-4 col-4 text-center">
                 <img
                   src="https://bin.bnbstatic.com/image/admin_mgs_image_upload/20201110/87496d50-2408-43e1-ad4c-78b47b448a6a.png"
                   class="img-fluid"
@@ -50,7 +96,6 @@
                 />
                 BTC
               </td>
-
               <td id="top1price" class="col-4"></td>
               <td id="top1change" class="col-4"></td>
             </tr>
@@ -66,7 +111,7 @@
               <td id="top2change" class="col-4"></td>
             </tr>
             <tr class="row">
-              <td class="col-lg-4 col-4 text-center">
+              <td class="col-md-4 col-4 text-center">
                 <img
                   src="https://assets.coingecko.com/coins/images/325/large/Tether.png?1668148663"
                   class="img-fluid"
@@ -76,7 +121,7 @@
               <td id="top3change" class="col-4"></td>
             </tr>
             <tr class="row">
-              <td class="col-lg-4 col-4 text-center">
+              <td class="col-md-4 col-4 text-center">
                 <img
                   src="https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850"
                   class="img-fluid"
@@ -86,7 +131,7 @@
               <td id="top4change" class="col-4"></td>
             </tr>
             <tr class="row">
-              <td class="col-lg-4 col-4 text-center">
+              <td class="col-md-4 col-4 text-center">
                 <img
                   src="https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png?1547042389"
                   class="img-fluid"
@@ -97,7 +142,7 @@
             </tr>
           </table>
         </div>
-        <div class="col-lg-9 col-12 mb-3">
+        <div class="col-md-9 col-12 mb-3">
           <h6>BTC/USDT</h6>
           <canvas
             width="960"
@@ -106,20 +151,81 @@
             class="rounded img-fluid"
           ></canvas>
         </div>
-        <table class="col-lg-12">
+      </div>
+        <table class="col-md-12 marketTable mx-auto">
           <tr>
-            <th class="col">Name</th>
-            <th class="col">Price</th>
-            <th class="col">24H Change</th>
-            <th class="col">Market Cap</th>
-            <th class="col">Circulating Supply</th>
-            <th class="col">Total Supply</th>
+            <th class="col-md">Name</th>
+            <th class="col-md">Price</th>
+            <th class="col-md">24H Change</th>
+            <th class="col-md">Market Cap</th>
+            <th class="col-md">Circulating Supply</th>
+            <th class="col-md">Total Supply</th>
           </tr>
           <tbody id="crypto"></tbody>
         </table>
-      </div>
+  
     </div>
-
+<section>
+  <div class="container-fluid text-light footer">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>Subscribe to our newsletter</h5>
+            <p>Monthly digest of what's new and exciting from us.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>© 2022 Company, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</section>
     <script>
       let coin1 = new WebSocket(
         "wss://stream.binance.com:9443/ws/btcusdt@ticker"

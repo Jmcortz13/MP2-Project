@@ -98,9 +98,48 @@ nav {
     align-items: center;
     justify-content: space-between;
   }
+  .menuIcon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: block;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .menuIcon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.25s ease-out;
+  }
+  
+  .menuIcon span:nth-child(1) {
+    top: 0px;
+  }
+  
+  .menuIcon span:nth-child(2),
+  .menuIcon span:nth-child(3) {
+    top: 8px;
+  }
+  
+  .menuIcon span:nth-child(4) {
+    top: 16px;
+  }
+  
+    
   nav .mainMenu {
     display: flex;
     list-style: none;
+    align-items: center;
   }
     nav .mainMenu li a {
     display: inline-block;
@@ -140,43 +179,35 @@ nav {
     text-transform: uppercase;
   }
 
-@media (max-width: 910px) {
-    nav .mainMenu {
-      height: 100vh;
-      position: fixed;
-      top: 0px;
-      right: 0px;
-      left: 0px;
-      z-index: 10;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: rgb(4, 16, 64);
-      transition: top 1s ease 0s;
+  @media (max-width: 768px) {
+    .mainMenu {
       display: none;
-      padding-left: 0rem;
-      
     }
-    nav .mainMenu .closeMenu {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    nav .openMenu {
+  
+    .menuIcon {
       display: block;
     }
-    nav .mainMenu li a:hover {
-      background: none;
-      color: rgb(255, 123, 0);
-     
+  
+    .menuIcon--open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
     }
-    .icons i {
-      display: inline-block;
-      padding: 12px;
+  
+    .menuIcon--open span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .menuIcon--open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  
+    .menuIcon--open span {
+      background-color: #fff;
     }
   }
-
+  .mainMenu--open {
+    display: block !important;
+  }
+    
 @media (max-width: 1265px){
     /* .content h1{
     margin-bottom: 50px;
@@ -195,6 +226,24 @@ nav {
     }
 
 }
+@media (min-width: 768px) {
+    .mainMenu {
+      display: flex;
+    }
+    
+    .openMenu {
+      display: none;
+    }
+    
+    .closeMenu {
+      display: none;
+    }
+    
+    .logo {
+      text-align: left;
+    }
+  }
+  
 @media (max-width: 925px){
     .coin-list{
         position: absolute;
@@ -442,3 +491,70 @@ p{
     font-size: 1rem;
     color: #fff;
 }
+.market-h1{
+  cursor: pointer;
+  transition: text-decoration 0.3s ease, color 0.3s ease;
+  padding-left: 100px;
+  color: #fff;
+}
+
+.market-h1:hover,
+.market-h1:focus,
+.market-h1:active {
+  text-decoration: underline;
+  color: #ff960b;
+}
+.marketTable {
+    width: 100%;
+    margin-bottom: 2rem;
+    background: #fff;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 5px;
+    color:#555
+  }
+  
+  .marketTable::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(10px);
+    z-index: -1;
+  }
+  .topCoins{
+    background: rgba(255, 255, 255, 0.068);
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 5px;
+    color:#fff
+  }
+  .topCoins::before {
+    content: "";
+    top: 0;
+    left: 0;
+    background-image: inherit;
+    filter: blur(10px);
+    z-index: -1;
+    position: absolute;
+  }
+  table {
+    font-size: 1rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+h1 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+footer{
+    color: #fff;
