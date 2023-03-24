@@ -393,40 +393,6 @@ nav .mainMenu {
 }
 
 
-
-  
-  
-  .marketTable::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: inherit;
-    filter: blur(10px);
-    z-index: -1;
-  }
-  .topCoins{
-    background: rgba(255, 255, 255, 0.068);
-    overflow: hidden;
-    padding: 20px;
-    border-radius: 5px;
-    color:#fff
-  }
-  .topCoins::before {
-    content: "";
-    top: 0;
-    left: 0;
-    background-image: inherit;
-    filter: blur(10px);
-    z-index: -1;
-    position: absolute;
-  }
-  table {
-    font-size: 1rem;
-  }
-
   .marketTable::before {
     content: "";
     position: absolute;
