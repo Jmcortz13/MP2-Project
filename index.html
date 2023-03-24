@@ -10,31 +10,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-
 </head>
 <body>
 <!-- background image -->
 
     <div class="bg-image">
+ <!-- nav bar -->
+ <nav class="navbar navbar-expand-md me-auto" aria-label="Fourth navbar example">
+    <div class="container-fluid">
+      <div class="logo"><img src="index-css-js/images/logo.png" class="logo"></div>
+      <button class="navbar-toggler menuIcon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon light"></span>
+      </button>
 
-<!-- nav bar -->
-<nav>
-    <div class="logo"><img src="index-css-js/images/logo.png" class="logo"></div>
-    <div class="openMenu"><i class="fa fa-bars"></i></div>
-    <ul class="mainMenu">
-        <li><a href="#" class="home">Home</a></li>
-        <li><a href="markets.html">Market</a></li>
-        <li><a href="feature.html">Features</a></li>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="#">About Us</a></li>
-        <div class="closeMenu"><i class="fa fa-times"></i></div>
-        <span class="icons">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>           
-        </span>
-    </ul>
-</nav>
+      <div class="collapse navbar-collapse navbar-dark" id="navbarsExample04">
+        <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3 mainMenu">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="markets.html">Market</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feature.html">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span class="badge rounded-pill text-bg-warning py-3 px-3">Log Out</span></a>
+          </li>
+          </ul>
+       </div>
+    </div>
+  </nav>
 
 <!-- content        -->
             <div class="content">
