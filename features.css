@@ -102,15 +102,33 @@ nav .mainMenu {
   box-shadow: none;
 }
 
-@media (min-width: 576px) {
-  .featurette-container {
-    flex-direction: row;
+/* Media query for extra small screens */
+@media (max-width: 575px) {
+  html, body {
+    height: 100%;
   }
 
-  .featurette-image {
-    margin-top: 0;
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .featurette-container {
+    flex: 1;
+    justify-content: center;
+  }
+  .col-md-7, .custom-h1, .lead {
+    flex: 1;
+    justify-content: center;
+  }
+  .lead {
+    font-size: 1rem; /* Adjust font size on smaller screens */
+    line-height: 1.4; /* Adjust line height on smaller screens */
   }
 }
+
 
 .featurette-container {
   width: 75%;
